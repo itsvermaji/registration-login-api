@@ -40,9 +40,13 @@ router.post('/', async (req, res) => {
           newUser.save((err, newUser) => {
             if (err) {
               console.log(err);
-              return res.json({ msg: "unable to save user. Please try again!" });
+              return res.json({ msg: "Unable to save user, please try again!" });
             }
             console.log(newUser, 'User saved Successfully');
+
+
+            // user is saved
+            
             return res.json(newUser);
           })
 

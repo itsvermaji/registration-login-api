@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/express-app', {
+mongoose.connect('mongodb://localhost/authentication-app', {
     useNewUrlParser: true, 
     useUnifiedTopology: true
 })

@@ -3,6 +3,10 @@ const router = express.Router();
 const User = require('../models/User.model');
 const { check, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const session = require('express-session')
+const jwt = require('jsonwebtoken');
+// const privateKey = require('')
+
 
 
 router.get('/', (req, res) => {
@@ -20,17 +24,31 @@ router.post('/', async (req, res) => {
   User.findOne({ email })
     .then((user) => {
       if (!user) {
-        return res.json({ msg: "User doesn't exist!" });
+        return res.json({ msg: "Invalid Email or Password" });
       }
 
       bcrypt.compare(password, user.password)
         .then((matches) => {
 
           if (!matches) {
-            return res.json({msg: "incorrect password"});
+            return res.json({msg: "Invalid Email or Password"});
           }
+
           // generate a token for this user
-          return res.json({msg: "user logs in!"});
+          // jwt.sign(payload, secretOrPrivateKey, [options, callback])
+
+
+          jwt.sign({ userid: user.id }, process.env.SECRET_KEY, 
+          { expiresIn: '1h' },
+          (err, token) => {
+            if(err) {
+              console.log(err);
+              return res.json({msg: 'Error occured while logging in'});
+            }
+            return res.json({msg: token});
+          });
+
+
 
         })
         .catch((err) => {

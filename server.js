@@ -3,20 +3,25 @@ const express = require('express');
 
 // express app
 const app = express();
+// Set Environment Variables
+require('dotenv').config()
+
 
 // Database connection
 require('./db.config');
 
 
-
+// For parsing req.body object
 app.use(express.json());
 
   
-
+// API routes
 app.use('/api/login', require('./routes/login'));
 app.use('/api/register', require('./routes/registration'));
 
+// Port number
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-    console.log(`App is running successfully!`);
+app.listen(port, () => {
+    console.log(`App is running on port: ${port}`);
 })

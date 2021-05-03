@@ -9,14 +9,16 @@
 6. If the user already exists, It will tell you user already registered.
 
 ## Sample Screenshots
-<img href="https://github.com/itsvermaji/registration-login-api/blob/master/screenshots/registration.png" alt="Successfull Registration">
-<h4 style="margin-bottom:20px;"> Successfull Registration </h4>
 
-<img href="https://github.com/itsvermaji/registration-login-api/blob/master/screenshots/login-success.png" alt="Login Success">
-<h4 style="margin-bottom:20px;"> Login Success </h4>
+![Registration Success](https://github.com/itsvermaji/registration-login-api/blob/master/screenshots/registration.png)
+Successfull Registration
 
-<img href="https://github.com/itsvermaji/registration-login-api/blob/master/screenshots/login-failed.png" alt="Login Failed">
-<h4 style="margin-bottom:20px;"> Login Failed </h4>
+![Login Success](https://github.com/itsvermaji/registration-login-api/blob/master/screenshots/login-success.png)
+Successfull Login
+
+![Login Failed](https://github.com/itsvermaji/registration-login-api/blob/master/screenshots/login-failed.png)
+Login Failed
+
 
 
 ## About this API
